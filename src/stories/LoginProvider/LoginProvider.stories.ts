@@ -14,5 +14,7 @@ export default LoginProviderMeta
 type LoginProviderStory = StoryObj<typeof LoginProviderMeta>
 
 export const ExampleLoginProviderStory: LoginProviderStory = {
-    args: {},
+    args: {
+        children: "text"
+    },
 } 
