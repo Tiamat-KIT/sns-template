@@ -1,23 +1,16 @@
 'use client'
-import { useState } from 'react'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select'
+import { ChangeEventHandler, useState } from 'react'
+import { css } from 'styled-system/css'
+
 
 export type Theme = 'system' | 'light' | 'dark'
 
 export default function ThemeSelect(): JSX.Element {
   const [theme, setTheme] = useState<Theme>('light')
 
-  const themetoggle = (event: string) => {
+  const themetoggle: ChangeEventHandler<HTMLSelectElement> = (event) => {
     if (typeof window !== 'undefined') {
-      const value = event as Theme
+      const value = event.currentTarget.value as Theme
       setTheme(value)
       localStorage.setItem('theme', value)
       if (value === 'dark') {
@@ -35,20 +28,14 @@ export default function ThemeSelect(): JSX.Element {
   }
 
   return (
-    <Select value={theme} onValueChange={themetoggle}>
-      <SelectTrigger className='w-[180px]'>
-        <SelectValue placeholder='Select Theme' />
-      </SelectTrigger>
-      <SelectContent>
-        <SelectGroup>
-          <SelectLabel>Themes</SelectLabel>
-          <SelectItem value='system' defaultChecked>
-            System
-          </SelectItem>
-          <SelectItem value='light'>Light</SelectItem>
-          <SelectItem value='dark'>Dark</SelectItem>
-        </SelectGroup>
-      </SelectContent>
-    </Select>
+      <select value={theme} onChange={themetoggle} className={css({
+        rounded: 'md',
+        height: "3rem",
+        width: "3rem",
+      })}>
+        <option value='system'>System</option>
+        <option value='light'>Light</option>
+        <option value='dark'>Dark</option>
+      </select>
   )
 }

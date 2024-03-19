@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
 import './globals.css'
+import {css} from "../../styled-system/css"
 import LoginProvider from '@/components/LoginProvider'
 import NavgationHeader from '@/components/NavgationHeader'
-import { cn } from '@/lib/utils'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -48,12 +48,16 @@ export default function RootLayout({
   }
   return (
     <html lang='ja'>
-      <body
-        className={cn(
-          'min-h-screen font-sans antialiased bg-cover bg-morning dark:bg-night',
-          fontSans.variable,
-        )}
-      >
+      <body className={css({
+        fontFamily: 'sans',
+        lineHeight: 'tall',
+        bgImage: 'url(/publicdomainq-0041781jae.jpg)',
+        bgSize: 'cover',
+        bgAttachment: 'fixed',
+        _dark: {
+          bgImage: 'url(/publicdomainq-0060524jyp.jpg)',
+        }
+      })}>
         <LoginProvider>
           {/* <NavgationHeader /> */}
           {children}

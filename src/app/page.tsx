@@ -1,15 +1,21 @@
 "use client"
 import { SignInButton } from '@clerk/clerk-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import {css} from "../../styled-system/css"
+import IntroCard from '@/components/IntroCard';
 
 export default function Home() {
   return (
-    <main className='container mx-auto p-5'>
-      <h1 className='text-center lg:text-5xl md:text-3xl sm:text-xl font-extrabold mb-5'>
+    <main>
+      <h1 className={css({
+        fontSize: '3xl',
+        fontWeight: 'extrabold',
+        textAlign: 'center',
+      
+      })}>
         あなたの面白い夢の内容、みんなで共有しよう
       </h1>
-      <Card className='mb-5'>
+      <IntroCard></IntroCard>
+      {/* <Card className='mb-5'>
         <CardHeader>
           <CardTitle>This SNS is?</CardTitle>
           <CardDescription>このSNSってどんなSNS？</CardDescription>
@@ -29,13 +35,31 @@ export default function Home() {
         <CardFooter className='text-lg'>
           <p>Utakata Kyosui</p>
         </CardFooter>
-      </Card>
-      <div className='grid grid-cols-3'>
-        <div className='grid-span-1'/>
+      </Card> */}
+      <div className={css({
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      })}>
         <SignInButton mode='modal'afterSignInUrl='/timeline' afterSignUpUrl='/timeline'> 
-            <Button variant="secondary" className='grid-span-1'>Join!</Button>
+            <button className={css({
+              bgColor: 'blue.500',
+              color: 'white',
+              padding: '5px',
+              margin: '5px',
+              fontSize: 'lg',
+              fontWeight: 'bold',
+              rounded: 'lg',
+              shadow: 'xl',
+              width: '1/3',
+              /* border: '1px solid',
+              borderColor: 'black', */
+              _hover: {
+                bgColor: 'blue.600',
+                shadow: 'none',
+              }
+            })}>Join!</button>
         </SignInButton>
-        <div className='grid-span-1'/>
       </div>
 
     </main>
