@@ -33,7 +33,16 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.2.23",
     "@pandacss/dev": "^0.35.0",
+    "@storybook/addon-essentials": "^8.0.2",
+    "@storybook/addon-interactions": "^8.0.2",
+    "@storybook/addon-links": "^8.0.2",
+    "@storybook/addon-onboarding": "^8.0.2",
+    "@storybook/blocks": "^8.0.2",
+    "@storybook/nextjs": "^8.0.2",
+    "@storybook/react": "^8.0.2",
+    "@storybook/test": "^8.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -49,5 +58,10 @@
     "tailwind-variants": "^0.2.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
-  }
+  },
+  "volta": {
+    "node": "20.11.1",
+    "yarn": "4.1.1"
+  },
+  "packageManager": "pnpm@8.15.5+sha1.a58c038faac410c947dbdb93eb30994037d0fce2"
 }

@@ -2,13 +2,13 @@
 import { SignInButton } from '@clerk/clerk-react';
 import {css} from "../../styled-system/css"
 import IntroCard from '@/components/IntroCard';
+import { Button } from '@/pandacss/button.css';
+import { container } from 'styled-system/patterns';
 
 export default function Home() {
   return (
-    <main className={css({
-      maxWidth: '100%',
-      display: 'flex',
-      justifyContent: 'center',
+    <main className={container({
+
     })}>
       <h1 className={css({
         fontSize: '3xl',
@@ -44,7 +44,7 @@ export default function Home() {
         justifyContent: 'center',
         alignItems: 'center',
       })}>
-        <SignInButton mode='modal'afterSignInUrl='/timeline' afterSignUpUrl='/timeline'> 
+        <SignInButton mode='modal' afterSignInUrl='/timeline' afterSignUpUrl='/timeline'> 
             <button className={css({
               bgColor: 'blue.500',
               color: 'white',
@@ -63,6 +63,7 @@ export default function Home() {
               }
             })}>Join!</button>
         </SignInButton>
+        <Button>test</Button>
       </div>
 
     </main>
