@@ -5,12 +5,15 @@ import IntroCard from '@/components/IntroCard';
 
 export default function Home() {
   return (
-    <main>
+    <main className={css({
+      maxWidth: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+    })}>
       <h1 className={css({
         fontSize: '3xl',
         fontWeight: 'extrabold',
         textAlign: 'center',
-      
       })}>
         あなたの面白い夢の内容、みんなで共有しよう
       </h1>
