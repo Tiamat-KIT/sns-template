@@ -63,7 +63,7 @@ export default function Home() {
               }
             })}>Join!</button>
         </SignInButton>
-        <Button>test</Button>
+        <Button type='danger'>test</Button>
       </div>
 
     </main>
